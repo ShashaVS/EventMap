@@ -1,8 +1,8 @@
 
 # EventMap    
  A simple and easy implementation of scalable and draggable layout with smooth animation in Android. Basically, EventMap used to implement a simple map with custom markers, but other scenarios can be applied. Try the sample app to see `EventMap` in action. <p>    
-<img src="screenshots/device_01.png" width="250" vspace="20" hspace="5"> <img src="screenshots/device_02.png" width="250" vspace="20" hspace="5"></p> <p>    
- <img src="screenshots/device_03.png" width="250" vspace="20" hspace="5"> <img src="screenshots/device_04.png" width="250" vspace="20" hspace="5"> </p>  
+<img src="screenshots/device_01.png" width="420" vspace="20" hspace="5"> <img src="screenshots/device_02.png" width="420" vspace="20" hspace="5"></p> <p>    
+ <img src="screenshots/device_03.png" width="420" vspace="20" hspace="5"> <img src="screenshots/device_04.png" width="420" vspace="20" hspace="5"> </p>  
   ## How to    
     
 Add it in your root build.gradle at the end of repositories:
