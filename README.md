@@ -36,6 +36,4 @@ A container for views, which can be dragged and zoomed. DragScaleLayout supports
 	  app:maxZoom="1.5"  
 	  app:mapScr="@drawable/seating_plan1" />
   ```
-
-android:id="@+id/map_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:animateLayoutChanges="true" app:maxZoom="1.5" app:mapScr="@drawable/seating_plan1"/> The map ImageView can be installed in xml - `mapScr` or programmatically via `getMapImageView()` method.    
- `addMarkerListenet(markerListener: MarkerListener)` - to get a click event on a marker.
+The map ImageView can be installed in xml - `mapScr` or programmatically via `getMapImageView()` method. `addMarkerListenet(markerListener: MarkerListener)` - to get a click event on a marker.
