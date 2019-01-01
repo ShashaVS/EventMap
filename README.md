@@ -17,7 +17,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependency:  
 ```css
 	dependencies {
-	        implementation 'com.github.ShashaVS:EventMap:1.0.1'
+	        implementation 'com.github.shashavs:eventmap:1.0.1'
 	}
 ```
  
