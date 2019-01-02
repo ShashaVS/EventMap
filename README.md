@@ -6,34 +6,69 @@
   ## How to    
     
 Add it in your root build.gradle at the end of repositories:
-```css
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+```
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
+}
 ``` 
 Add the dependency:  
-```css
-	dependencies {
-	        implementation 'com.github.shashavs:eventmap:1.0.1'
-	}
+```
+dependencies {
+	implementation 'com.github.shashavs:eventmap:1.0.1'
+}
 ```
  
 ## DragScaleLayout    
     
 A container for views, which can be dragged and zoomed. DragScaleLayout supports three types of children: map, marker, info. Map is ImageView, marker and info are default or custom views. DragScaleLayout handles the following events: move, fling, double tap, scale. To the maptype view, the scale and translation actions is applied. For types of marker and info - only translation.    
 
-## DragScaleLayout Example
+## EventMap usage example
   
+  - Layout xml:
   ```
   <com.shashavs.eventmap.drag_scale.DragScaleLayout  
 	  android:id="@+id/map_container"  
 	  android:layout_width="match_parent"  
 	  android:layout_height="match_parent"  
 	  android:animateLayoutChanges="true"  
-	  app:maxZoom="1.5"  
-	  app:mapScr="@drawable/seating_plan1" />
+	  app:mapScr="@drawable/seating_plan1" 
+	  app:maxZoom="1.5" />
   ```
-The map ImageView can be installed in xml - `mapScr` or programmatically via `getMapImageView()` method. `addMarkerListenet(markerListener: MarkerListener)` - to get a click event on a marker.
+  The map ImageView can be installed in xml - `mapScr` or programmatically via `getMapImageView()` method. 
+  
+ - Create Marker:
+ ```
+    val marker = Marker(id, x * metrics.density, y * metrics.density)
+  ```
+  The marker coordinates depends on the size of the source map image in px. 
+  
+  - If necessary, create a default or custom InfoLayout:
+   ```
+    val infoView = DefaultInfoLayout(context, marker, title, description)
+  ```
+  - Build MarkerView:
+  ```
+	val markerView = MarkerView.Builder(context, marker)
+		.background(R.drawable.default_title_marker)
+		.text(title)
+		.textColor(R.color.light)
+		.textSize(14f)
+		.build()
+  ``` 
+  ```
+    val markerView = MarkerView.Builder(context, marker)
+		.background(R.drawable.default_marker)
+		.info(infoView)
+		.build()
+  ``` 
+  - Add markerView to DragScaleLayout:
+  ```
+    dragScaleLayout.addMarker(markerView)
+  ```
+  - If necessary, add a markerListener to get a click event on a marker:
+  ```
+    addMarkerListenet(markerListener: MarkerListener)
+  ```
